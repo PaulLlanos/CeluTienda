@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.reseña {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reseña h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.reseña p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.reseña p strong {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.reseña p span {
+    font-style: italic;
+    color: #888;
+}
+
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tarjeta-producto {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    flex: 1 1 calc(30% - 20px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .tarjeta-producto {
+        flex: 1 1 calc(45% - 20px);
+    }
+
+    .reseña h3 {
+        font-size: 1.4rem;
+    }
+
+    .reseña p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta-producto {
+        flex: 1 1 100%;
+    }
+
+    .reseña h3 {
+        font-size: 1.2rem;
+    }
+
+    .reseña p {
+        font-size: 0.9rem;
+    }
+}
+

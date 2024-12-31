@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeluTienda - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>CeluTienda</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="reseñas.html">Reseñas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Contacto</h2>
+    <form id="formulario-contacto" action="https://formspree.io/f/xlddwndy" method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        </div>
+        <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensaje-error" style="color: red;"></div>
+</main>
+
+<footer>
+    <p>CeluTienda.</p>
+</footer>
+
+<script>
+    document.getElementById('formulario-contacto').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const correo = document.getElementById('correo').value;
+        const mensaje = document.getElementById('mensaje').value;
+        const mensajeError = document.getElementById('mensaje-error');
+
+        if (nombre === '' || correo === '' || mensaje === '') {
+            mensajeError.textContent = 'Todos los campos son requeridos.';
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(correo)) {
+            mensajeError.textContent = 'Por favor, introduce un correo electrónico válido.';
+            return;
+        }
+
+        mensajeError.textContent = '';
+        this.submit();
+    });
+</script>
+
+</body>
+</html>
